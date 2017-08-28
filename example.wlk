@@ -74,9 +74,9 @@ object gonzen{
 // Patovas
 
 object club{
-method entrar(persona,patova){
-
-return patova.dejaPasar(persona)
+method entrar(persona,patova)
+{
+ return patova.dejaPasar(persona)
 }
 
 }
@@ -105,6 +105,10 @@ object mainRoom
   {
     asistentesMain.add(persona)
   } 
+  method cantPersonas()
+  {
+   return asistentesMain.size()
+  }
   method bailenTodos()
   {
     asistentesMain.map({persona => persona.baila()})
@@ -118,18 +122,33 @@ object mainRoom
 
 object panoramaBar
  {
-  method dixon(persona)
+   var asistentesPanorama=#{}
+  method agregarPersona(persona)
   {
-  persona.modificarEnergia(-60)
-  persona.aumentarDiversion(120)
- }
- 
- method marcelDettmann(persona){
-  persona.energia(0)
-  persona.aumentarDiversion(1000)
- }
- 
- method tommyMunoz(persona){
-  persona.modificarEnergia(-80)
- }
+    asistentesPanorama.add(persona)
+  } 
+  method cantPersonas()
+  {
+   return asistentesPanorama.size()
+  }
+  method bailenTodos()
+  {
+    asistentesPanorama.map({persona => persona.baila()})
+  }
+  method baila (persona)
+  {
+   method dixon(persona)
+   {
+   persona.modificarEnergia(-60)
+   persona.aumentarDiversion(120)
+   }
+   method marcelDettmann(persona)
+   {
+    persona.energia(0)
+    persona.aumentarDiversion(1000)
+   }
+   method tommyMunoz(persona){
+   persona.modificarEnergia(-80)
+   }
+  }
 }
