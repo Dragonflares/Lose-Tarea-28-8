@@ -118,6 +118,10 @@ object mainRoom
    persona.disminuirEnergia(40)
    persona.aumentarDiversion(30)
   }
+  method bailaGozen()
+  {
+   return asistentesMain.contains(gozen)
+  }
 }
 
 object panoramaBar
@@ -150,5 +154,8 @@ object panoramaBar
    method tommyMunoz(persona){
    persona.modificarEnergia(-80)
    }
+  }
+  method bailaGozen(){
+  return asistentesPanorama.contains(gozen)
   }
 }
