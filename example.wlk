@@ -100,14 +100,26 @@ object gushtavotruccensen{
 
 object mainRoom
 {
- method baila(persona){
-  persona.disminuirEnergia(40)
-  persona.aumentarDiversion(30)
- }
+  var asistentesMain=#{}
+  method agregarPersona(persona)
+  {
+    asistentesMain.add(persona)
+  } 
+  method bailenTodos()
+  {
+    asistentesMain.map({persona => persona.baila()})
+  }
+  method baila(persona)
+  {
+   persona.disminuirEnergia(40)
+   persona.aumentarDiversion(30)
+  }
 }
 
-object panoramaBar{
- method dixon(persona){
+object panoramaBar
+ {
+  method dixon(persona)
+  {
   persona.modificarEnergia(-60)
   persona.aumentarDiversion(120)
  }
